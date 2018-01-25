@@ -1,14 +1,15 @@
 {
-  "name": "taaspace",
-  "version": "4.0.0-alpha.20",
-  "description": "A zoomable user interface lib for web apps",
+  "name": "taaspace-gh-pages",
+  "private": true,
+  "version": "1.0.0",
+  "description": "GitHub Pages for taataa/taaspace",
   "keywords": [
     "zoomable",
     "user interface",
     "html",
     "layout"
   ],
-  "homepage": "https://github.com/taataa/taaspace",
+  "homepage": "https://github.com/taataa/taaspace#gh-pages",
   "main": "index.js",
   "author": {
     "name": "Akseli Palen",
@@ -20,63 +21,13 @@
   },
   "license": "MIT",
   "dependencies": {
-    "component-emitter": "^1.2.1",
-    "extend": "^3.0.1",
-    "loadimages": "^1.0.0",
-    "monotone-convex-hull-2d": "^1.0.1",
-    "move-js": "^0.5.0",
-    "nudged": "^1.4.0",
-    "seqid": "^1.0.1"
   },
   "devDependencies": {
-    "async": "^2.6.0",
-    "css-loader": "^0.28.7",
-    "file-loader": "^1.1.5",
-    "genversion": "^2.0.1",
-    "jquery": "^3.2.1",
-    "npm-watch": "^0.3.0",
-    "semver": "^5.4.1",
-    "standard": "*",
-    "style-loader": "^0.19.0",
-    "tap-spec": "^4.1.1",
-    "tape": "^4.8.0",
-    "tape-run": "^3.0.1",
-    "url-loader": "^0.6.2",
-    "webpack": "^3.9.0",
-    "webpack-livereload-plugin": "^1.0.0",
-    "webpack-tape-run": "0.0.7"
+    "eslint-plugin-html": "^4.0.2",
+    "standard": "*"
   },
   "scripts": {
     "start": "python3 -m http.server 8000",
-    "serve": "ifconfig | grep inet && python3 -m http.server 8000",
-    "build": "npm run lint && npm run gv && npm run test:headless && npm run build:min",
-    "build:min": "webpack",
-    "build:watch": "webpack --watch",
-    "test:headless": "webpack --config test/webpack.headless.config.js",
-    "test:headless:watch": "webpack --watch --config test/webpack.headless.config.js",
-    "test:browser:watch": "webpack --watch --config test/webpack.browser.config.js",
-    "lint": "standard 'lib/**/*.js' 'test/**/*.js' && echo 'OK'",
-    "lintfix": "standard --fix 'lib/**/*.js' 'test/**/*.js'",
-    "gv": "genversion lib/version.js",
-    "watch": "npm-watch"
-  },
-  "watch": {
-    "lint": {
-      "patterns": [
-        "lib/**/*.js",
-        "test/**/*.js"
-      ]
-    },
-    "build:min": {
-      "patterns": [
-        "index.js",
-        "lib/**/*.js"
-      ]
-    },
-    "gv": {
-      "patterns": [
-        "package.json"
-      ]
-    }
+    "lint": "standard --plugin html 'examples/*/*.html' && echo 'OK'"
   }
 }
